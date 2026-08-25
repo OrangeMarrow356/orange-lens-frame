@@ -1,0 +1,1956 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Orange Lens Frame | Photography</title>
+
+<style>
+
+:root{
+  --o:#ff6b35;
+  --g:#2a9d8f;
+  --d:#102a2a;
+  --c:#fffaf3;
+  --m:#60706f;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#0D2818;
+  color:white;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1000;
+
+    padding:18px 7%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:#12372A;
+    backdrop-filter:blur(10px);
+
+    font-weight:800;
+}
+
+.logo{
+    color:white;
+}
+
+.logo span{
+    color:#FF6B35;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:22px;
+}
+
+nav a:hover{
+    color:#FFB347;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:90vh;
+
+  padding:140px 7% 70px;
+
+  display:grid;
+
+  grid-template-columns:1.1fr .9fr;
+
+  gap:45px;
+
+  align-items:center;
+
+background:
+    radial-gradient(circle at 85% 20%, #2d6a4f 0 12%, transparent 13%),
+    radial-gradient(circle at 10% 85%, #40916c 0 14%, transparent 15%),
+    linear-gradient(135deg, #0D2818, #1B4332);
+}
+
+.badge{
+
+  display:inline-block;
+
+  background:var(--g);
+
+  color:white;
+
+  padding:8px 14px;
+
+  border-radius:99px;
+
+  font-weight:bold;
+}
+
+h1{
+
+  font-size:
+    clamp(3.5rem,8vw,7rem);
+
+  line-height:.9;
+
+  margin:18px 0;
+
+  letter-spacing:-.06em;
+}
+
+h1 span{
+  color:var(--o);
+}
+
+.hero p{
+
+  font-size:1.2rem;
+
+  color:#2BEDAE;
+
+  max-width:620px;
+
+  line-height:1.6;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+
+  display:inline-block;
+
+  padding:14px 22px;
+
+  border-radius:99px;
+
+  text-decoration:none;
+
+  font-weight:bold;
+
+  margin:10px 8px 0 0;
+
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.primary{
+    background:#FF6B35;
+    color:white;
+}
+
+.secondary{
+    background:white;
+    color:#12372A;
+    border:none;
+}
+
+.secondary:hover{
+    background:#FFE5D0;
+}
+
+
+/* =========================
+   HERO CARD
+========================= */
+
+.hero-card{
+    height:500px;
+    border-radius:35px;
+
+    background:rgba(0,167,0,.325);
+    backdrop-filter:blur(40px);
+    border:1px solid rgba(255,255,255,.25);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+
+    box-shadow:0 25px 70px rgba(16,42,42,.2);
+    overflow:hidden;
+}
+.hero-logo{
+    width:100%;
+    max-width:420px;
+    height:auto;
+    object-fit:contain;
+    display:block;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+  padding:95px 7%;
+}
+
+.title{
+
+  font-size:
+    clamp(2.3rem,5vw,4rem);
+
+  line-height:1;
+
+  margin-bottom:12px;
+}
+
+.intro{
+
+  color:var(--m);
+
+  max-width:700px;
+
+  margin-bottom:40px;
+
+  line-height:1.6;
+}
+
+
+/* =========================
+   FEATURED GALLERY
+========================= */
+
+.gallery{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:20px;
+}
+
+.photo{
+
+  aspect-ratio:4/5;
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:22px;
+
+  background:#ddd;
+
+  box-shadow:
+    0 12px 35px #102a2a1c;
+
+  cursor:pointer;
+}
+
+.photo img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+
+  transition:
+    transform .45s;
+}
+
+.photo:hover img{
+
+  transform:scale(1.05);
+}
+
+.photo:after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:45% 0 0;
+
+  background:
+    linear-gradient(
+      transparent,
+      #000b
+    );
+
+  pointer-events:none;
+}
+
+.caption{
+
+  position:absolute;
+
+  z-index:2;
+
+  bottom:18px;
+
+  left:20px;
+
+  right:20px;
+
+  color:#fff;
+
+  text-shadow:
+    0 2px 8px #000;
+}
+
+.caption strong{
+
+  display:block;
+
+  font-size:1.2rem;
+}
+
+.caption small{
+
+  font-size:.9rem;
+}
+
+
+/* =========================
+   F-16 ROTATION
+========================= */
+
+.photo.f16 img{
+
+  transform:
+    rotate(0deg)
+    scale(1.02);
+}
+
+.photo.f16:hover img{
+
+  transform:
+    rotate(0deg)
+    scale(1.08);
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.dark{
+
+  background:var(--d);
+
+  color:white;
+}
+
+.dark p{
+
+  color:#d5e0df;
+
+  font-size:1.1rem;
+
+  line-height:1.6;
+}
+
+.grid2{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:60px;
+}
+
+.features{
+
+  display:grid;
+
+  gap:14px;
+}
+
+.feature{
+
+  padding:17px;
+
+  background:#ffffff12;
+
+  border-left:
+    5px solid var(--o);
+
+  border-radius:14px;
+}
+
+
+/* =========================
+   BOOKING SECTION
+========================= */
+
+.contact{
+
+  background: linear-gradient(
+    135deg,
+    #ff6a00 0%,
+    #ff8c42 30%,
+    #ffffff 55%,
+    #1b6b3a 100%
+  );
+   
+}
+
+.card{
+
+  background:white;
+
+  border-radius:30px;
+
+  padding:42px;
+
+  max-width:850px;
+
+  margin:0 auto;
+
+  box-shadow:
+    0 20px 60px #102a2a1f;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.booking-form{
+
+  display:grid;
+
+  gap:10px;
+}
+
+.booking-form label{
+
+  font-weight:bold;
+
+  margin-top:12px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea{
+
+  width:100%;
+
+  padding:14px 16px;
+
+  border:
+    2px solid #d9e1df;
+
+  border-radius:12px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:16px;
+
+  color:var(--d);
+
+  background:#FFFFFF;
+
+  outline:none;
+
+  transition:.2s;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus{
+
+  border-color:var(--g);
+
+  box-shadow:
+    0 0 0 3px #2a9d8f22;
+}
+
+.booking-form textarea{
+
+  resize:vertical;
+
+  min-height:140px;
+}
+
+.booking-form button{
+
+  border:none;
+
+  cursor:pointer;
+
+  font-size:16px;
+
+  margin-top:18px;
+}
+
+
+/* =========================
+   CONTACT INFO
+========================= */
+
+.contact-info{
+    margin-top:35px;
+    padding-top:25px;
+    border-top:1px solid #102a2a20;
+}
+
+.contact-info p{
+    margin:12px 0;
+    color:#12372A;   /* Label color */
+    font-weight:bold;
+}
+
+.contact-info a{
+    color:#FF6B35 !important;   /* Orange */
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.contact-info a:hover{
+    color:#FF9F1C !important;
+    text-decoration:underline;
+}
+
+
+/* =========================
+   FULLSCREEN PHOTO VIEWER
+========================= */
+
+.lightbox{
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:9999;
+
+  display:none;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:70px 90px;
+
+  background:rgba(0,0,0,.94);
+}
+
+.lightbox.open{
+
+  display:flex;
+}
+
+.lightbox-image{
+
+  max-width:90vw;
+
+  max-height:82vh;
+
+  width:auto;
+
+  height:auto;
+
+  object-fit:contain;
+
+  border-radius:10px;
+
+  box-shadow:
+    0 20px 80px rgba(0,0,0,.8);
+
+  user-select:none;
+
+  transition:
+    transform .25s;
+}
+
+
+/* =========================
+   LIGHTBOX BUTTONS
+========================= */
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next{
+
+  position:absolute;
+
+  z-index:10001;
+
+  border:none;
+
+  background:rgba(255,255,255,.15);
+
+  color:white;
+
+  width:54px;
+
+  height:54px;
+
+  border-radius:50%;
+
+  cursor:pointer;
+
+  transition:.2s;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover{
+
+  background:
+    rgba(255,255,255,.3);
+
+  transform:scale(1.08);
+}
+
+
+/* CLOSE */
+
+.lightbox-close{
+
+  top:20px;
+
+  right:25px;
+
+  font-size:0;
+}
+
+.lightbox-close::before,
+.lightbox-close::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:24px;
+
+  height:3px;
+
+  background:white;
+
+  border-radius:5px;
+}
+
+.lightbox-close::before{
+
+  transform:rotate(45deg);
+}
+
+.lightbox-close::after{
+
+  transform:rotate(-45deg);
+}
+
+
+/* LEFT */
+
+.lightbox-prev{
+
+  left:25px;
+
+  top:50%;
+
+  transform:
+    translateY(-50%);
+
+  font-size:0;
+}
+
+.lightbox-prev::before{
+
+  content:"";
+
+  width:16px;
+
+  height:16px;
+
+  border-left:
+    3px solid white;
+
+  border-bottom:
+    3px solid white;
+
+  transform:rotate(45deg);
+
+  margin-left:7px;
+}
+
+
+/* RIGHT */
+
+.lightbox-next{
+
+  right:25px;
+
+  top:50%;
+
+  transform:
+    translateY(-50%);
+
+  font-size:0;
+}
+
+.lightbox-next::before{
+
+  content:"";
+
+  width:16px;
+
+  height:16px;
+
+  border-right:
+    3px solid white;
+
+  border-top:
+    3px solid white;
+
+  transform:rotate(45deg);
+
+  margin-right:7px;
+}
+
+
+/* CAPTION */
+
+.lightbox-caption{
+
+  position:absolute;
+
+  left:20px;
+
+  right:20px;
+
+  bottom:22px;
+
+  text-align:center;
+
+  color:white;
+
+  font-size:18px;
+
+  font-weight:bold;
+
+  text-shadow:
+    0 2px 8px black;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+  padding:30px 7%;
+
+  color:var(--m);
+
+  display:flex;
+
+  justify-content:space-between;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:800px){
+
+  .hero,
+  .grid2{
+
+    grid-template-columns:1fr;
+  }
+
+  .gallery{
+
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .hero-card{
+
+    height:350px;
+  }
+
+  nav .links{
+
+    display:flex;
+
+    gap:5px;
+  }
+
+  nav a{
+
+    margin-left:10px;
+
+    font-size:.85rem;
+  }
+
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+@media(max-width:520px){
+
+  nav{
+
+    padding:15px 5%;
+  }
+
+  nav .logo{
+
+    font-size:.9rem;
+  }
+
+  nav .links{
+
+    display:none;
+  }
+
+  .gallery{
+
+    grid-template-columns:1fr;
+  }
+
+  section{
+
+    padding:70px 5%;
+  }
+
+  .hero{
+
+    padding:
+      130px 5% 60px;
+  }
+
+  .hero-card{
+
+    height:300px;
+  }
+
+  .card{
+
+    padding:25px;
+
+    border-radius:22px;
+  }
+
+  .lightbox{
+
+    padding:
+      60px 10px;
+  }
+
+  .lightbox-image{
+
+    max-width:96vw;
+
+    max-height:78vh;
+  }
+
+  .lightbox-prev{
+
+    left:8px;
+  }
+
+  .lightbox-next{
+
+    right:8px;
+  }
+
+}
+
+
+/* =========================
+   SUCCESS MESSAGE
+========================= */
+
+.form-success{
+
+  display:none;
+
+  padding:18px;
+
+  margin-top:20px;
+
+  background:#d6f1eb;
+
+  color:var(--d);
+
+  border-radius:14px;
+
+  font-weight:bold;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+  <div class="logo">
+
+    <span>Orange</span> Lens Frame
+
+  </div>
+
+
+  <div class="links">
+
+    <a href="#work">
+      Work
+    </a>
+
+    <a href="gallery/">
+      Gallery
+    </a>
+
+    <a href="#about">
+      About
+    </a>
+
+    <a href="#contact">
+      Contact
+    </a>
+
+  </div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+  <div>
+
+    <div class="badge">
+      Photography • New Mexico
+    </div>
+
+
+    <h1>
+
+      Moments.<br>
+
+      <span>Captured.</span>
+
+    </h1>
+
+
+    <p>
+
+      A colorful photography portfolio featuring
+      portraits, nature, sports, aviation,
+      and memorable moments.
+
+    </p>
+
+
+    <a
+      class="btn primary"
+      href="#work">
+
+      View My Work
+
+    </a>
+
+
+    <a
+      class="btn secondary"
+      href="gallery/">
+
+      View Full Gallery
+
+    </a>
+
+
+    <a
+      class="btn secondary"
+      href="#contact">
+      
+      Book a Session (Prices depend on event: Contact for more info)
+
+    </a>
+
+  </div>
+
+
+<div class="hero-card">
+    <img
+        src="images/orange-lens-logo.png"
+        alt="Orange Lens Photography"
+        class="hero-logo">
+</div>
+</header>
+
+
+
+<!-- =========================
+     SELECTED WORK
+========================= -->
+
+<section id="work">
+
+  <h2 class="title">
+    Selected Work
+  </h2>
+
+
+  <p class="intro">
+
+    A collection of sports, wildlife, aviation,
+    portraits, and outdoor photography.
+
+  </p>
+
+
+  <div class="gallery">
+
+
+    <!-- BASKETBALL -->
+
+    <article
+      class="photo"
+      data-title="Basketball"
+      data-location="AHS · Alamogordo, New Mexico">
+
+      <img
+        src="images/Basketball.JPG"
+        alt="Basketball at AHS in Alamogordo">
+
+      <div class="caption">
+
+        <strong>
+          Basketball
+        </strong>
+
+        <small>
+          AHS · Alamogordo, New Mexico
+        </small>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- BIRD -->
+
+    <article
+      class="photo"
+      data-title="Wildlife"
+      data-location="Pagosa Springs, Colorado">
+
+      <img
+        src="images/Bird.jpg"
+        alt="Bird in Pagosa Springs">
+
+      <div class="caption">
+
+        <strong>
+          Wildlife
+        </strong>
+
+        <small>
+          Pagosa Springs, Colorado
+        </small>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- F-16 -->
+
+    <article
+      class="photo f16"
+      data-title="F-16 Falcon"
+      data-location="Holloman Airshow 2026">
+
+      <img
+        src="images/F-16.jpg"
+        alt="F-16 Falcon at Holloman Airshow 2026">
+
+      <div class="caption">
+
+        <strong>
+          F-16 Falcon
+        </strong>
+
+        <small>
+          Holloman Airshow 2026
+        </small>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- GROUP PORTRAIT -->
+
+    <article
+      class="photo"
+      data-title="Group Portrait"
+      data-location="Oliver Lee Memorial State Park">
+
+      <img
+        src="images/Group.JPG"
+        alt="Group portrait at Oliver Lee Memorial State Park">
+
+      <div class="caption">
+
+        <strong>
+          Group Portrait
+        </strong>
+
+        <small>
+          Oliver Lee Memorial State Park
+        </small>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- PORTRAIT 1 -->
+
+    <article
+      class="photo"
+      data-title="Portrait"
+      data-location="Oliver Lee Memorial State Park">
+
+      <img
+        src="images/Person%201.JPG"
+        alt="Portrait at Oliver Lee Memorial State Park">
+
+      <div class="caption">
+
+        <strong>
+          Portrait
+        </strong>
+
+        <small>
+          Oliver Lee Memorial State Park
+        </small>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- PORTRAIT 2 -->
+
+    <article
+      class="photo"
+      data-title="Portrait"
+      data-location="Oliver Lee Memorial State Park">
+
+      <img
+        src="images/Person%202.JPG"
+        alt="Portrait at Oliver Lee Memorial State Park">
+
+      <div class="caption">
+
+        <strong>
+          Portrait
+        </strong>
+
+        <small>
+          Oliver Lee Memorial State Park
+        </small>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+
+  <div
+    style="
+      text-align:center;
+      margin-top:35px;
+    ">
+
+    <a
+      class="btn primary"
+      href="gallery/">
+
+      See All My Photos →
+
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section
+  class="dark"
+  id="about">
+
+
+  <div class="grid2">
+
+
+    <div>
+
+      <h2 class="title">
+        Behind the Lens
+      </h2>
+
+
+      <p>
+
+        I'm a photographer who enjoys capturing
+        a little bit of everything. From people
+        and action to landscapes, wildlife,
+        and aviation, I focus on making photographs
+        that feel natural, energetic, and memorable.
+
+      </p>
+
+    </div>
+
+
+    <div class="features">
+
+
+      <div class="feature">
+        📸 Portrait & People Photography
+      </div>
+
+
+      <div class="feature">
+        🌄 Nature & Wildlife Photography
+      </div>
+
+
+      <div class="feature">
+        🏀 Sports & Action Photography
+      </div>
+
+
+      <div class="feature">
+        ✈️ Aviation Photography
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     BOOKING / CONTACT
+========================= -->
+
+<section
+  class="contact"
+  id="contact">
+
+
+  <div class="card">
+
+
+    <h2 class="title">
+      Book a Session.
+    </h2>
+
+
+    <p class="intro">
+
+      Interested in booking a photography session?
+      Fill out the form below and I'll get back
+      to you.
+
+    </p>
+
+
+
+    <!-- FORM -->
+
+    <form
+      class="booking-form"
+      action="https://formspree.io/f/mykrqowj"
+      method="POST">
+
+
+      <label for="name">
+        Name *
+      </label>
+
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Your name"
+        required>
+
+
+
+      <label for="email">
+        Email *
+      </label>
+
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="you@example.com"
+        required>
+
+
+
+      <label for="phone">
+        Phone
+      </label>
+
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="(575) 555-5555">
+
+
+
+      <label for="type">
+        Photography Type *
+      </label>
+
+      <select
+        id="type"
+        name="photography_type"
+        required>
+
+        <option value="">
+          Select a type
+        </option>
+
+        <option value="Portrait">
+          Portrait
+        </option>
+
+        <option value="Sports">
+          Sports
+        </option>
+
+        <option value="Aviation">
+          Aviation
+        </option>
+
+        <option value="Wildlife">
+          Wildlife
+        </option>
+
+        <option value="Nature">
+          Nature
+        </option>
+
+        <option value="Event">
+          Event
+        </option>
+
+        <option value="Other">
+          Other
+        </option>
+
+      </select>
+
+
+
+      <label for="date">
+        Preferred Date
+      </label>
+
+      <input
+        type="date"
+        id="date"
+        name="preferred_date">
+
+
+
+      <label for="message">
+        Tell me about your session *
+      </label>
+
+      <textarea
+        id="message"
+        name="message"
+        rows="6"
+        placeholder="Tell me what you're looking for..."
+        required></textarea>
+
+
+
+      <button
+        class="btn primary"
+        type="submit">
+
+        Send Booking Request
+
+      </button>
+
+
+    </form>
+
+
+
+    <!-- CONTACT INFORMATION -->
+
+    <div class="contact-info">
+
+
+      <p>
+
+        <b>Email:</b>
+
+        <a
+          href="mailto:jodycerra@outlook.com">
+
+          jodycerra@outlook.com
+
+        </a>
+
+      </p>
+
+
+      <p>
+
+        <b>Phone:</b>
+
+        <a
+          href="tel:+15755518646">
+
+          (575) 551-8646
+
+        </a>
+
+      </p>
+
+
+      <p>
+
+        <b>Instagram:</b>
+
+        <a
+          href="https://www.instagram.com/orange_lens_frame"
+          target="_blank">
+
+          @orange_lens_frame
+
+        </a>
+
+      </p>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <span>
+    © 2026 Orange Lens Frame Photography
+  </span>
+
+
+  <span>
+    Professional • Colorful • Authentic
+  </span>
+
+</footer>
+
+
+
+<!-- =========================
+     FULLSCREEN PHOTO VIEWER
+========================= -->
+
+<div
+  class="lightbox"
+  id="lightbox"
+  aria-hidden="true">
+
+
+  <button
+    class="lightbox-close"
+    id="lightboxClose"
+    aria-label="Close photo viewer">
+  </button>
+
+
+  <button
+    class="lightbox-prev"
+    id="lightboxPrev"
+    aria-label="Previous photo">
+  </button>
+
+
+  <img
+    class="lightbox-image"
+    id="lightboxImage"
+    src=""
+    alt="">
+
+
+  <button
+    class="lightbox-next"
+    id="lightboxNext"
+    aria-label="Next photo">
+  </button>
+
+
+  <div
+    class="lightbox-caption"
+    id="lightboxCaption">
+  </div>
+
+</div>
+
+
+
+<script>
+
+/* =========================
+   FULLSCREEN PHOTO VIEWER
+========================= */
+
+const lightbox =
+  document.getElementById("lightbox");
+
+const lightboxImage =
+  document.getElementById("lightboxImage");
+
+const lightboxCaption =
+  document.getElementById("lightboxCaption");
+
+const closeButton =
+  document.getElementById("lightboxClose");
+
+const previousButton =
+  document.getElementById("lightboxPrev");
+
+const nextButton =
+  document.getElementById("lightboxNext");
+
+
+const photos =
+  Array.from(
+    document.querySelectorAll(".photo")
+  );
+
+
+let currentIndex = 0;
+
+
+
+/* =========================
+   SHOW PHOTO
+========================= */
+
+function showPhoto(index){
+
+  if(index < 0){
+
+    index =
+      photos.length - 1;
+
+  }
+
+
+  if(index >= photos.length){
+
+    index = 0;
+
+  }
+
+
+  currentIndex = index;
+
+
+  const photo =
+    photos[currentIndex];
+
+
+  const image =
+    photo.querySelector("img");
+
+
+  lightboxImage.src =
+    image.getAttribute("src");
+
+
+  lightboxImage.alt =
+    image.getAttribute("alt") || "";
+
+
+  lightboxCaption.textContent =
+    photo.dataset.title +
+    " • " +
+    photo.dataset.location;
+
+
+
+  /* F-16 rotation */
+
+  if(
+    photo.classList.contains("f16")
+  ){
+
+    lightboxImage.style.transform =
+      "rotate(0deg)";
+
+  }
+
+  else{
+
+    lightboxImage.style.transform =
+      "none";
+
+  }
+
+}
+
+
+
+/* =========================
+   OPEN
+========================= */
+
+function openLightbox(index){
+
+  showPhoto(index);
+
+
+  lightbox.classList.add("open");
+
+
+  lightbox.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+
+
+/* =========================
+   CLOSE
+========================= */
+
+function closeLightbox(){
+
+  lightbox.classList.remove("open");
+
+
+  lightbox.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+
+  document.body.style.overflow =
+    "";
+
+
+  lightboxImage.src = "";
+
+}
+
+
+
+/* =========================
+   PHOTO CLICK
+========================= */
+
+photos.forEach(
+  (photo,index) => {
+
+    photo.addEventListener(
+      "click",
+      function(){
+
+        openLightbox(index);
+
+      }
+    );
+
+  }
+);
+
+
+
+/* =========================
+   PREVIOUS
+========================= */
+
+previousButton.addEventListener(
+  "click",
+  function(event){
+
+    event.stopPropagation();
+
+    showPhoto(
+      currentIndex - 1
+    );
+
+  }
+);
+
+
+
+/* =========================
+   NEXT
+========================= */
+
+nextButton.addEventListener(
+  "click",
+  function(event){
+
+    event.stopPropagation();
+
+    showPhoto(
+      currentIndex + 1
+    );
+
+  }
+);
+
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+closeButton.addEventListener(
+  "click",
+  function(event){
+
+    event.stopPropagation();
+
+    closeLightbox();
+
+  }
+);
+
+
+
+/* =========================
+   CLICK BACKGROUND
+========================= */
+
+lightbox.addEventListener(
+  "click",
+  function(event){
+
+    if(
+      event.target === lightbox
+    ){
+
+      closeLightbox();
+
+    }
+
+  }
+);
+
+
+
+/* =========================
+   KEYBOARD
+========================= */
+
+document.addEventListener(
+  "keydown",
+  function(event){
+
+    if(
+      !lightbox.classList.contains(
+        "open"
+      )
+    ){
+
+      return;
+
+    }
+
+
+    if(event.key === "Escape"){
+
+      closeLightbox();
+
+    }
+
+
+    if(event.key === "ArrowLeft"){
+
+      showPhoto(
+        currentIndex - 1
+      );
+
+    }
+
+
+    if(event.key === "ArrowRight"){
+
+      showPhoto(
+        currentIndex + 1
+      );
+
+    }
+
+  }
+);
+
+
+
+/* =========================
+   MOBILE SWIPE
+========================= */
+
+let touchStartX = 0;
+
+let touchEndX = 0;
+
+
+lightbox.addEventListener(
+  "touchstart",
+  function(event){
+
+    touchStartX =
+      event.changedTouches[0]
+      .screenX;
+
+  },
+  {passive:true}
+);
+
+
+lightbox.addEventListener(
+  "touchend",
+  function(event){
+
+    touchEndX =
+      event.changedTouches[0]
+      .screenX;
+
+
+    const difference =
+      touchStartX - touchEndX;
+
+
+    if(
+      Math.abs(difference) < 50
+    ){
+
+      return;
+
+    }
+
+
+    if(difference > 0){
+
+      showPhoto(
+        currentIndex + 1
+      );
+
+    }
+
+    else{
+
+      showPhoto(
+        currentIndex - 1
+      );
+
+    }
+
+  },
+  {passive:true}
+);
+
+</script>
+
+</body>
+</html>
